@@ -316,7 +316,7 @@
 		6FE208F8FE93D5F211CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 41534B9208A2B299002069FE /* Build configuration list for PBXProject "TextEdit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -608,7 +608,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA564B1413C6507000FBCF57 /* Version.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				SDKROOT = macosx;
 			};
@@ -618,7 +617,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA564B1413C6507000FBCF57 /* Version.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				SDKROOT = macosx;
 			};
