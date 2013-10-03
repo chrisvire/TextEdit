@@ -53,6 +53,7 @@
 #import "TextEditDefaultsKeys.h"
 #import "TextEditMisc.h"
 #import "TextEditErrors.h"
+#import "GraphiteKit/GraphiteKit.h"
 
 @interface DocumentWindowController(Private)
 
@@ -86,7 +87,8 @@
 
 - (id)init {
     if (self = [super initWithWindowNibName:@"DocumentWindow"]) {
-	layoutMgr = [[NSLayoutManager allocWithZone:[self zone]] init];
+	//layoutMgr = [[NSLayoutManager allocWithZone:[self zone]] init];
+    layoutMgr = [GraphiteKit newLayoutManagerWithZone:[self zone]];
 	[layoutMgr setDelegate:self];
 	[layoutMgr setAllowsNonContiguousLayout:YES];
     }
@@ -198,6 +200,11 @@
     [textView setAutomaticTextReplacementEnabled:substitutionsOK && [defaults boolForKey:TextReplacement]];
     
     [textView setSelectedRange:NSMakeRange(0, 0)];
+    
+    GrGlyphGenerator *glyphGenerator = [GraphiteKit sharedGlyphGenerator];
+    glyphGenerator.language = @"ksw";
+    [[textView layoutManager] setGlyphGenerator:glyphGenerator];
+
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
